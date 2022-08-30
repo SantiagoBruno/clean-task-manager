@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/SantiagoBruno/clean-task-manager/issues"
   },
-  "homepage": "https://github.com/SantiagoBruno/clean-task-manager#readme"
+  "homepage": "https://github.com/SantiagoBruno/clean-task-manager#readme",
+  "devDependencies": {
+    "git-commit-msg-linter": "^4.1.3"
+  }
 }
