@@ -1,12 +1,12 @@
-import { TaskModel } from '../entities/task'
+import { Task } from '../entities/task'
 
-export interface AddTaskModel {
+export interface AddTaskInput {
   title: string
-  description: string
-  initialDate: Date
-  finalDate: Date
+  description?: string
+  initialDate?: Date
+  finalDate?: Date
 }
 
 export interface AddTask {
-  add: (task: AddTaskModel) => Promise<TaskModel>
+  add: (task: AddTaskInput) => Promise<Task>
 }

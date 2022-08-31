@@ -1,7 +1,7 @@
-export interface TaskModel {
+export interface Task {
   id: string
   title: string
-  description: string
-  initialDate: Date
-  finalDate: Date
+  description?: string
+  initialDate?: Date
+  finalDate?: Date
 }
