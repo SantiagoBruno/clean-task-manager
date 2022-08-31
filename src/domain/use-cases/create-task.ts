@@ -1,5 +1,5 @@
 import { Task } from '../entities/task'
-import { CreateData, CreateDataInput } from '../persistence/create-data'
+import { CreateTaskRepo } from '../persistence/create-task-repo'
 
 export interface CreateTaskInput {
   title: string
@@ -9,18 +9,14 @@ export interface CreateTaskInput {
 }
 
 export class CreateTask {
-  readonly createData: CreateData
+  readonly createTaskRepo: CreateTaskRepo
 
-  constructor (createData: CreateData) {
-    this.createData = createData
+  constructor (createTaskRepo: CreateTaskRepo) {
+    this.createTaskRepo = createTaskRepo
   }
 
-  async create (taskInput: CreateTaskInput): Promise<Task> {
-    const createDataInput: CreateDataInput = {
-      domainName: 'task',
-      data: taskInput
-    }
-    const task = await this.createData.create(createDataInput)
+  async create (createTaskInput: CreateTaskInput): Promise<Task> {
+    const task = await this.createTaskRepo.create(createTaskInput)
     return task
   }
 }
